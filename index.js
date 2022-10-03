@@ -19,8 +19,8 @@
 //     ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 const server = require('./src/app.js');
 const { conn } = require('./src/db.js');
-const axios = require('axios')
-const {getCountriesApi}=require('../api/src/routes/controllers/LoadDb/LoadDb');
+const axios = require('axios');
+//const {getCountriesApi}=require('../api/src/routes/controllers/LoadDb/LoadDb');
 
 //const axios =require('axios')
 // Syncing all the models at once.
