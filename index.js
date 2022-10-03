@@ -19,13 +19,14 @@
 //     ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 const server = require('./src/app.js');
 const { conn } = require('./src/db.js');
+const axios = require('axios')
 const {getCountriesApi}=require('../api/src/routes/controllers/LoadDb/LoadDb');
-const { PGPORT }= process.env;
+
 //const axios =require('axios')
 // Syncing all the models at once.
 conn.sync({ force: true }).then(() => {
-  server.listen(PGPORT, async () => {
-    console.log(`Listen on port ${PGPORT}`); // eslint-disable-line no-console
+  server.listen(process.env.PORT, async () => {
+    console.log(`Listen on port ${PORT}`); // eslint-disable-line no-console
     await getCountriesApi()
   });
 });
