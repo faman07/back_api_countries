@@ -24,7 +24,7 @@ const { PORT }= process.env;
 //const axios =require('axios')
 // Syncing all the models at once.
 conn.sync({ force: true }).then(() => {
-  server.listen(5432, async () => {
+  server.listen(PORT, async () => {
     console.log('%s listening at 3001'); // eslint-disable-line no-console
     await getCountriesApi()
   });
