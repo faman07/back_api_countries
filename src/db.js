@@ -15,8 +15,9 @@ const path = require('path');
 //   },
 // });
 const {
-  DB_USER, DB_PASSWORD, DB_HOST, DB_NAME
+  DB_USER, DB_PASSWORD, DB_HOST, DB_NAME, DB_USERLOC,DB_HOSTLOC, DB_PASSWORDLOC 
 } = process.env;
+
 let sequelize = process.env.NODE_ENV === "production"
   ? new Sequelize({
     database: DB_NAME,
@@ -39,7 +40,7 @@ let sequelize = process.env.NODE_ENV === "production"
     },
     ssl: true,
   })
-  : new Sequelize(`postgres://${DB_USER}:${DB_PASSWORD}@${DB_HOST}/countries`, {
+  : new Sequelize(`postgres://${DB_USERLOC}:${DB_PASSWORDLOC}@${DB_HOSTLOC}/countries`, {
     logging: false,  
     native: false, 
   });
